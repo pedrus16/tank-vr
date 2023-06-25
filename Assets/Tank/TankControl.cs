@@ -11,16 +11,20 @@ namespace Valve.VR.InteractionSystem
 
         public float speed = 1.0f;
         public float angularSpeed = 4.0f;
-
         public float throttleDeadzone = 0.1f;
 
+        public Player player;
         public Transform driverPosition;
         public Transform gunnerPosition;
+
+        protected bool isDriving = true;
+
+        public SteamVR_Action_Boolean switchPositionAction = SteamVR_Input.GetAction<SteamVR_Action_Boolean>("SwitchPosition");
 
         // Start is called before the first frame update
         void Start()
         {
-
+            player.transform.SetLocalPositionAndRotation(driverPosition.localPosition, driverPosition.localRotation);
         }
 
         // Update is called once per frame
@@ -37,12 +41,35 @@ namespace Valve.VR.InteractionSystem
 
             transform.Translate(Vector3.forward * forward * speed * Time.deltaTime);
             transform.Rotate(Vector3.up, rotation * angularSpeed * Time.deltaTime);
+
+            bool switchPressed = false;
+            foreach (Hand hand in player.hands)
+            {
+                if (switchPositionAction.GetStateDown(hand.handType))
+                {
+                    switchPressed = true;
+                }
+            }
+
+            if (switchPressed)
+            {
+                if (isDriving)
+                {
+                    player.transform.SetLocalPositionAndRotation(gunnerPosition.localPosition, gunnerPosition.localRotation);
+                }
+                else
+                {
+                    player.transform.SetLocalPositionAndRotation(driverPosition.localPosition, driverPosition.localRotation);
+                }
+                isDriving = !isDriving;
+            }
         }
 
         /* Remap a linear value going from -1.0f to 1.0f and flatten the middle section which size correspond to the deadzone value */
-        private static float RemapWithDeadzone(float value, float deadzone) 
+        private static float RemapWithDeadzone(float value, float deadzone)
         {
-            if (Mathf.Abs(value) < deadzone) {
+            if (Mathf.Abs(value) < deadzone)
+            {
                 return 0;
             }
 

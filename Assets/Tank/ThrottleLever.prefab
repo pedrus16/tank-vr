@@ -142,7 +142,7 @@ Transform:
   m_GameObject: {fileID: 5156427725138532571}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: -0.08, y: -0.08, z: -0.08}
+  m_LocalScale: {x: 0.07, y: 0.07, z: 0.07}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 8415373727574429372}
@@ -384,6 +384,8 @@ MonoBehaviour:
   repositionGameObject: 1
   maintainMomemntum: 0
   momemtumDampenRate: 5
+  neutralPosition: 0
+  speedToNeutralPosition: 0
 --- !u!114 &2798297816938409854
 MonoBehaviour:
   m_ObjectHideFlags: 0
