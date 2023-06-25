@@ -24,7 +24,7 @@ namespace Valve.VR.InteractionSystem
         // Start is called before the first frame update
         void Start()
         {
-            player.transform.SetLocalPositionAndRotation(driverPosition.localPosition, driverPosition.localRotation);
+            // player.transform.SetLocalPositionAndRotation(driverPosition.localPosition, driverPosition.localRotation);
         }
 
         // Update is called once per frame
@@ -55,11 +55,15 @@ namespace Valve.VR.InteractionSystem
             {
                 if (isDriving)
                 {
-                    player.transform.SetLocalPositionAndRotation(gunnerPosition.localPosition, gunnerPosition.localRotation);
+                    // player.transform.SetLocalPositionAndRotation(gunnerPosition.localPosition, gunnerPosition.localRotation);
+                    player.transform.SetParent(gunnerPosition);
+                    player.transform.SetLocalPositionAndRotation(Vector3.zero, Quaternion.identity);
                 }
                 else
                 {
-                    player.transform.SetLocalPositionAndRotation(driverPosition.localPosition, driverPosition.localRotation);
+                    // player.transform.SetLocalPositionAndRotation(driverPosition.localPosition, driverPosition.localRotation);
+                    player.transform.SetParent(driverPosition);
+                    player.transform.SetLocalPositionAndRotation(Vector3.zero, Quaternion.identity);
                 }
                 isDriving = !isDriving;
             }
