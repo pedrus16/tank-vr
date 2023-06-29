@@ -482,7 +482,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f32883eed859804dbb0c5fedac91496, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisOfRotation: 2
+  axisOfRotation: 1
   childCollider: {fileID: 7373473274568638308}
   linearMapping: {fileID: 0}
   hoverLock: 1
@@ -534,7 +534,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turret: {fileID: 40506060594352280}
-  rotationRatio: 0.02
+  rotationRatio: 0.05
+--- !u!1 &3394639558724242725
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6389243129715823715}
+  m_Layer: 0
+  m_Name: Muzzle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6389243129715823715
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3394639558724242725}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.624}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7561019484188092349}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4072677485066921158
 GameObject:
   m_ObjectHideFlags: 0
@@ -668,14 +699,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6981213196220390960}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0.0484, z: -0.0292}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0, y: 0.026, z: -0.0477}
   m_LocalScale: {x: 0.02, y: 0.02, z: 0.02}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1989230829273659196}
   m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8157009971258149009
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -775,14 +806,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7178240247817721782}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.125, y: 0.01, z: 0.125}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1989230829273659196}
   m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2169038057870927629
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1409,7 +1440,15 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 4972487613819198086}
-    m_AddedComponents: []
+    - targetCorrespondingSourceObject: {fileID: -8768393957307344806, guid: 78a9f275fd577d246a161445a8d43805,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6389243129715823715}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2072588995168308623, guid: 78a9f275fd577d246a161445a8d43805,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8432208697548717062}
   m_SourcePrefab: {fileID: 100100000, guid: 78a9f275fd577d246a161445a8d43805, type: 3}
 --- !u!4 &40506060594352280 stripped
 Transform:
@@ -1435,3 +1474,26 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 7979898114101559271}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &8249780586490704488 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2072588995168308623, guid: 78a9f275fd577d246a161445a8d43805,
+    type: 3}
+  m_PrefabInstance: {fileID: 7979898114101559271}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8432208697548717062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8249780586490704488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b26d82c93822757469906b9862c1d60c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 718659068036699596}
+  fireAction:
+    actionPath: /actions/default/in/Fire
+    needsReinit: 0
+  shell: {fileID: 1759797854641783112, guid: 506da312f52ea714f93f0e7044a7fe9a, type: 3}

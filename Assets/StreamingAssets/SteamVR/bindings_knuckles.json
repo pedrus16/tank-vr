@@ -85,16 +85,7 @@
       },
       "/actions/default" : {
          "chords" : [],
-         "haptics" : [
-            {
-               "output" : "none",
-               "path" : "/user/hand/left/output/haptic"
-            },
-            {
-               "output" : "none",
-               "path" : "/user/hand/right/output/haptic"
-            }
-         ],
+         "haptics" : [],
          "poses" : [
             {
                "output" : "/actions/default/in/pose",
@@ -119,7 +110,7 @@
             {
                "inputs" : {
                   "click" : {
-                     "output" : "/actions/default/in/interactui"
+                     "output" : "/actions/default/in/fire"
                   }
                },
                "mode" : "button",
@@ -155,7 +146,7 @@
             {
                "inputs" : {
                   "click" : {
-                     "output" : "/actions/default/in/interactui"
+                     "output" : "/actions/default/in/fire"
                   }
                },
                "mode" : "button",

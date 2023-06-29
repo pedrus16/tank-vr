@@ -24,7 +24,7 @@ namespace Valve.VR.InteractionSystem
         {
             if (circularDrive && turret)
             {
-                turret.localEulerAngles = new Vector3(turret.localEulerAngles.x, circularDrive.outAngle * -rotationRatio, turret.localEulerAngles.z);
+                turret.localEulerAngles = new Vector3(turret.localEulerAngles.x, circularDrive.outAngle * rotationRatio, turret.localEulerAngles.z);
             }
         }
     }
