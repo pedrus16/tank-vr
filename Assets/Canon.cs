@@ -22,8 +22,6 @@ namespace Valve.VR.InteractionSystem
         // Update is called once per frame
         void Update()
         {
-            Debug.Log(player.leftHand.handType);
-            Debug.Log(fireAction);
             if (fireAction.GetStateDown(player.leftHand.handType))
             {
                 GameObject projectile = Instantiate(shell, muzzle.position,
